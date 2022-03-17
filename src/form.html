@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Projeto exemplo
+    </title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/list.css">
+    <link rel="stylesheet" href="../assets/css/form.css">
+
+</head>
+
+<body>
+    <header class="cabecalho">
+
+        <img src="../assets/img/logo.png" />
+    </header>
+    <div class="menu">
+        <a href="../index.html">
+            Listagem
+        </a>
+        <a href="../src/form.html">
+            Cadastro
+        </a>
+
+    </div>
+
+    <section>
+        <form class="formulario">
+            <div class="linha-formulario">
+
+                <label class="label-grande" for="name">Nome:</label>
+                <input name="name" id="name" required type="text" />
+            </div>
+            <div class="linha-formulario">
+                <label class="label-grande" for="phone">Telefone:</label>
+                <input name="phone" id="phone" required type="text" />
+            </div>
+            <div class="linha-formulario xp" style="display: flex;">
+                <label class="label-grande">Experiência previa:</label>
+                <div style="display: inline-block;width: 40%;">
+                    <input type="radio" name="xp" id="xp-yes" /> <label for="xp-yes">
+                        sim
+                    </label>
+                           
+                <br />
+                <input type="radio" name="xp" id="xp-no" /> <label for="xp-no">
+                    Não
+                </label>
+                
+                </div>
+                </div>
+                    
+            </div>
+        </div>
+
+            <input type="submit" value="Salvar" />
+        </form>
+    </section>
+</body>
+
+</html>
