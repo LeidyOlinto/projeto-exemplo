@@ -19,7 +19,7 @@
         <img src="../assets/img/logo.png" />
     </header>
     <div class="menu">
-        <a href="../index.html">
+        <a id="goHome" href="../index.html">
             Listagem
         </a>
         <a href="../src/form.html">
@@ -29,7 +29,7 @@
     </div>
 
     <section>
-        <form class="formulario">
+        <form class="formulario" onsubmit="testaFormulario(event);">
             <div class="linha-formulario">
 
                 <label class="label-grande" for="name">Nome:</label>
@@ -42,12 +42,12 @@
             <div class="linha-formulario xp" style="display: flex;">
                 <label class="label-grande">Experiência previa:</label>
                 <div style="display: inline-block;width: 40%;">
-                    <input type="radio" name="xp" id="xp-yes" /> <label for="xp-yes">
+                    <input type="radio" name="xp" id="xp-yes" value="true"/> <label for="xp-yes">
                         sim
                     </label>
                            
                 <br />
-                <input type="radio" name="xp" id="xp-no" /> <label for="xp-no">
+                <input type="radio" name="xp" id="xp-no" value="false"/> <label for="xp-no">
                     Não
                 </label>
                 
@@ -58,7 +58,9 @@
         </div>
 
             <input type="submit" value="Salvar" />
+           
         </form>
+        <script src="../assets/js/form.js"></script>
     </section>
 </body>
 

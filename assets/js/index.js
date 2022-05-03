@@ -1,25 +1,9 @@
-var people = [
-    {
-        name: 'suverleide da silva olinto',
-        tel: '51 99999-9926',
-        xp: true
-    },
-    {
-        name: 'Anderson dos santos',
-        tel: '51 99999-9999',
-        xp: true
-    },
-    {
-        name: 'Karina da Silva Pereira',
-        tel: '51 99999-9999',
-        xp: false
-    },   
-    {
-        name: 'Caue da Silva ',
-        tel: '51 99999-9999',
-        xp: true
-    },   
-];
+var peopleRaw = localStorage.getItem('people')
+if(peopleRaw != null){
+    var people = JSON.parse(peopleRaw)
+}else {
+var people = [];
+}
  function desenhaTabela() {
 
     currentLines = [...(document.querySelectorAll('table.lista tbody .dinamic-content'))];
@@ -41,10 +25,20 @@ var people = [
             ${ (people[person].xp ? '<strong style="color:green"> Sim </strong> ': '<strong style="color:red">Nao</strong> ' ) }
             </td>
             <td>
-            <button onclick="people.splice(${person}, 1); desenhaTabela() "> Excluir </button>
+            <button onclick="deleteUser(${person})"> Excluir </button>
+            <a href="./src/form.html?person=${person}">Editar</a>
+        
                 
             </td>
-        </tr>`
+
+        </tr>   
+    `
     }
+}
+
+function deleteUser(p) {
+    people.splice(p, 1);
+    desenhaTabela();
+    localStorage.setItem('people', JSON.stringify(people))
 }
 desenhaTabela()
